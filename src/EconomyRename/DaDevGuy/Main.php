@@ -2,6 +2,7 @@
 declare(strict_types=1);
 namespace EconomyRename\DaDevGuy;
 
+use cooldogedev\BedrockEconomy\libs\cooldogedev\libSQL\context\ClosureContext;
 use cooldogedev\BedrockEconomy\api\BedrockEconomyAPI;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
