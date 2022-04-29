@@ -1,0 +1,16 @@
+# INTERNAL DO NOT TOUCH
+
+config-ver: 1
+
+#CONFIG 
+# Use {name} To Get Player's Name
+
+no-permission: "You dont have permission"
+
+usage: "/rename name"
+
+rename-price: 1000
+
+rename-sucess: "Sucess Rename"
+
+no-money: "You Dont Have Enought Amount Of Money"
