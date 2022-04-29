@@ -34,8 +34,8 @@ class Main extends PluginBase implements Listener
             }
             if (!isset($args[0])) {
                 $sender->sendMessage($this->getConfig()->get("usage"));
-                return false;
             }
+            
             if (isset($args[0])) {
                 BedrockEconomyAPI::legacy()->getPlayerBalance(
                     $sender->getName(),
