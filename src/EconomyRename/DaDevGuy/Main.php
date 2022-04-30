@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener
                     $sender->getName(),
                     ClosureContext::create(
                         function (?int $balance) use ($sender, $args): void {
-                            if ($balance <= $this->getConfig()->get("rename-price")) {//changed === to <=
+                            if ($balance >= $this->getConfig()->get("rename-price")) {//changed === to <=
                                 $money = $this->getConfig()->get("rename-price");
                                 $name = $args[0];
                                 BedrockEconomyAPI::getInstance()->subtractFromPlayerBalance($sender->getName(), $money);
