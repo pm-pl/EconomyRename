@@ -1,6 +1,6 @@
 <?php 
 
-namespace davidglitch04\libEco\Utils;
+namespace EconomyRename\DaDevGuy\davidglitch04\libEco\Utils;
 
 final class Utils {
 
