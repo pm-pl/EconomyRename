@@ -5,9 +5,8 @@ branches:
 projects:
   EconomyRename:
     path: ""
-    libs:
-      libEco:
-        src: davidglitch04\libEco\libEco
+     libs:
+      - src: davidglitch04\libEco\libEco
         version: ^2.0.0
     lint:
       phpstan: false
