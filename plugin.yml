@@ -6,6 +6,7 @@ api: [4.0.0]
 description: Easy Economy Rename Plugin
 depend: 
 - BedrockEconomy
+- libEco
 commands: 
  rename: 
   description: Rename Items
