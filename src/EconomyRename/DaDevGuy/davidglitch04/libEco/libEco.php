@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace davidglitch04\libEco;
+namespace EconomyRename\DaDevGuy\davidglitch04\libEco;
 
-use davidglitch04\libEco\Utils\Utils;
+use EconomyRename\DaDevGuy\davidglitch04\libEco\Utils\Utils;
 use pocketmine\Server as PMServer;
 use pocketmine\player\Player;
 use cooldogedev\BedrockEconomy\libs\cooldogedev\libSQL\context\ClosureContext;
