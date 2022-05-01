@@ -53,6 +53,7 @@ class Main extends PluginBase implements Listener
                     $name = $args[0];
                     $item = $sender->getInventory()->getItemInHand();
                     $item->setCustomName($name);
+                    $sender->getInventory()->setItemInHand($item);
                     $message = str_replace("{name}", $name, $this->getConfig()->get("rename-sucess"));
                     $sender->sendMessage($message);
                 } else {
