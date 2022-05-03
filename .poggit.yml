@@ -7,7 +7,7 @@ projects:
     path: ""
     libs:
       - src: David-pm-pl/libEco/libEco
-        version: ^2.0.0
+        version: ^3.0.0
         branch: stable
     lint:
       phpstan: false
