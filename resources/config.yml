@@ -4,13 +4,13 @@ config-ver: 2
 
 #CONFIG 
 # Use {name} To Get Player's Name
-
+# Use {cost} To Get Price
 no-permission: "You dont have permission"
 
 usage: "/rename name"
 
 rename-price: 1000
 
-rename-sucess: "Sucess Rename"
+rename-success: "Success Rename"
 
 no-money: "You Dont Have Enough Amount Of Money"
