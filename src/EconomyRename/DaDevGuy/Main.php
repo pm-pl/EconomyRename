@@ -46,24 +46,39 @@ class Main extends PluginBase implements Listener
             if (isset($args[0])) 
             {
                 $price = $this->getConfig()->get("rename-price");
-                $bal = libEco::myMoney($sender);
-                if($bal = $price){
-                    $p = $sender->getName();
-                    libEco::reduceMoney($sender, $price);
-                    $name = $args[0];
-                    $item = $sender->getInventory()->getItemInHand();
-                    $item->setCustomName($name);
-                    $sender->getInventory()->setItemInHand($item);
-                    $message = str_replace("{name}", $name, $this->getConfig()->get("rename-sucess"));
-                    $sender->sendMessage($message);
-                } else {
-                    $name = $sender->getName();
-                    $message = str_replace("{name}", $name, $this->getConfig()->get("no-money"));
-                    $sender->sendMessage($message);
-                }
+				libEco::reduceMoney($sender, $price, static function(bool $success) use ($sender, $price): void {
+                    if($success){
+						if (is_null($sender)){
+                             libEco::addMoney($sender, $price);
+						} else{
+							$name = $args[0];
+							$item = $sender->getInventory()->getItemInHand();
+							$item->setCustomName($name);
+							$sender->getInventory()->setItemInHand($item);
+							libEco::myMoney($player, static function(float $money) use($sender) : void {
+							$sender->sendMessage($this->getMessage("rename-success", ["{name}", "{cost}"], [$sender->getName(), $money]));
+								});
+                        }
+                    } elseif(!is_null($sender)){
+						$name = $sender->getName();
+						libEco::myMoney($player, static function(float $money) use($sender) : void {
+						$sender->sendMessage($this->getMessage("no-money", ["{name}", "{cost}"], [$name, $money]));
+							});
+					}
+                });
                 return true;
             }
         }
         return false;
     }
+	
+	public function getMessage(string $msg, array $search = null, array $replace = null): string{
+		if(is_null($search) and is_null($replace)){
+			return TextFormat::colorize($this->getConfig()->get($msg));
+		} else{
+			$msg = TextFormat::colorize($this->getConfig()->get($msg));
+			$msg = str_replace($search, $replace, $msg);
+			return $msg;
+		}
+	}
 }
