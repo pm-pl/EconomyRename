@@ -1,13 +1,14 @@
 <?php
-declare(strict_types=1);
 
 namespace EconomyRename\DaDevGuy;
+
 use davidglitch04\libEco\libEco;
 use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\event\Listener;
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
+use pocketmine\utils\TextFormat;
 
 class Main extends PluginBase implements Listener
 {
