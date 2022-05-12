@@ -62,7 +62,7 @@ class Main extends PluginBase implements Listener
                         }
                     } elseif(!is_null($sender)){
 						$name = $sender->getName();
-						libEco::myMoney($player, static function(float $money) use($sender) : void {
+						libEco::myMoney($sender, static function(float $money) use($sender) : void {
 						$sender->sendMessage($this->getMessage("no-money", ["{name}", "{cost}"], [$name, $money]));
 							});
 					}
