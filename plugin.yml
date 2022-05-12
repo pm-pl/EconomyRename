@@ -1,7 +1,7 @@
 name: EconomyRename
 author: DaDevGuy
 main: EconomyRename\DaDevGuy\Main
-version: 2.0.0
+version: 2.0.1
 api: [4.0.0]
 description: Easy Economy Rename Plugin
 
