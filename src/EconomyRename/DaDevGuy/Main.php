@@ -15,9 +15,13 @@ class Main extends PluginBase implements Listener
     public function onEnable(): void 
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        @mkdir($this->getDataFolder());
         $this->saveDefaultConfig();
         $this->getResource("config.yml");
+	    
+	if(!libEco::isInstall()){
+		$this->getLogger()->notice('You need to download an economy plugin like: EconomyAPI or BedrockEconomy to use it!');
+		$this->getServer()->getPluginManager()->disablePlugin($this);
+	}
 
         //Config Version
 
